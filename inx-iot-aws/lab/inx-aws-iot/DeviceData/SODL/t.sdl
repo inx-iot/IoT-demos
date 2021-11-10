@@ -1,6 +1,6 @@
 #V:2.0.0
-#B:1
-#D:Y2021M11d10h12m43s38
+#B:3
+#D:Y2021M11d10h15m40s2
 #N:inx-aws-iot
 1
 1	100000	90000
@@ -9,7 +9,7 @@ BEGIN Constant_Bool1 0
 Run_ConstantBool	1	1	-1	0 	1 B 2 	0 
 END
 BEGIN Constant_String1 0
-aws.mqtt.hostname 
+ag3paopw83bmk-ats.iot.eu-west-2.amazonaws.com 
 Run_ConstantString	1	1	-1	0 	1 S 1 	0 
 END
 BEGIN Constant_Int1 0
@@ -27,15 +27,11 @@ Reset	1	1	4	0 	1 B 1 	1 2
 END
 BEGIN mqtt_client 0
 client.pem client.key root.crt 
-connect	1	1	1	6 S 1 I 1 B 2 S 2 S -1 S -1 	0 	2 3 4 
-END
-BEGIN Constant_String1 0
-clientID 
-Run_ConstantString	1	1	-1	0 	1 S 2 	0 
+connect	1	1	5	6 S 1 I 1 B 2 S 2 S -1 S -1 	0 	2 3 4 
 END
 BEGIN adc_read 0
 *
-read	1	1	1	1 I 2 	1 F 1 	1 6 
+read	1	1	1	1 I 2 	1 F 1 	1 7 
 END
 BEGIN Constant_Int1 0
 1 
@@ -43,23 +39,31 @@ Run_ConstantInt	1	1	-1	0 	1 I 2 	0
 END
 BEGIN mqtt_publish 0
 *
-publish	1	1	5	3 S 3 S 4 I -1 	0 	1 -1 
+publish	1	1	6	3 S 3 S 4 I -1 	0 	1 -1 
 END
 BEGIN ConvertorRealToString 0
 *
-Run_ConvertorRealToString	1	1	6	1 F 1 	1 S 6 	1 8 
+Run_ConvertorRealToString	1	1	7	1 F 1 	1 S 6 	1 9 
 END
 BEGIN Constant_String1 0
-topic_1 
-Run_ConstantString	1	1	-1	0 	1 S 3 	0 
+measurements/ 
+Run_ConstantString	1	1	-1	0 	1 S 7 	0 
 END
 BEGIN string_format 0
 %s,%s 
-run	1	1	7	2 S 5 S 6 	1 S 4 	1 5 
+run	1	1	8	2 S 5 S 6 	1 S 4 	1 6 
 END
 BEGIN wall_clock 0
 *
-get	1	1	8	0 	3 S 5 I -1 I -1 	1 7 
+get	1	1	9	0 	3 S 5 I -1 I -1 	1 8 
+END
+BEGIN RuntimeInfo 0
+*
+getstat	1	1	1	0 	6 S 2 I -1 I -1 S -1 S -1 S -1 	1 5 
+END
+BEGIN string_format 0
+%s%s 
+run	1	1	5	2 S 7 S 2 	1 S 3 	1 -1 
 END
 BEGIN Start
 *

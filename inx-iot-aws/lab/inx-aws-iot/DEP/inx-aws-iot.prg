@@ -56,7 +56,7 @@ _
 205	225	305	270
 1	0
 parameter
-String Constant	3	_	_	aws.mqtt.hostname
+String Constant	3	_	_	ag3paopw83bmk-ats.iot.eu-west-2.amazonaws.com
 EndOfValues
 EndOfLabels
 string constant
@@ -288,8 +288,8 @@ clientid
 
 connect	4	EndOfFunc
 BEGIN_LINE
-1	8	0	0	-1	0
-394	325
+1	16	0	0	-1	0
+394	315
 394	170
 END_LINE
 inputport
@@ -312,12 +312,14 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	3	434	130	0	1	1	mandatory= 0	0	1
+2	3	434	130	0	0	1	mandatory= 0	0	1
 connect
 
 connect	0	EndOfFunc
 BEGIN_LINE
-0	-1	0	2	-1	0
+1	16	0	2	-1	0
+429	305
+429	130
 END_LINE
 startport
 
@@ -345,44 +347,6 @@ finishport
 connect	8	EndOfFunc
 BEGIN_LINE
 0	99	1	3	-1	0
-END_LINE
-END_BLOCK
-BEGIN_BLOCK
-
-const_s1
-_
-8	0	0	0
-_
-_
-This is a string constant.
-Constant_String1
-0
-_
-245	295	345	340
-1	0
-parameter
-String Constant	3	_	_	clientID
-EndOfValues
-EndOfLabels
-string constant
-
-outputport
-
-1	3	345	325	0	0	1	mandatory= 0	0	1
-
-
-Run_ConstantString	1	EndOfFunc
-BEGIN_LINE
-0	100	3	1	-1	0
-END_LINE
-internalport
-
-4	-1	0	0	0	0	0	mandatory= 0	0	1
-
-
-Run_ConstantString	0	EndOfFunc
-BEGIN_LINE
-0	-1	0	4	-1	0
 END_LINE
 END_BLOCK
 BEGIN_BLOCK
@@ -495,9 +459,9 @@ topic name
 
 publish	1	EndOfFunc
 BEGIN_LINE
-1	13	0	0	-1	0
-754	320
-754	315
+1	17	0	0	-1	0
+934	345
+934	315
 END_LINE
 inputport
 
@@ -605,22 +569,22 @@ This is a string constant.
 Constant_String1
 0
 _
-610	290	710	335
+580	240	680	285
 1	0
 parameter
-String Constant	3	_	_	topic_1
+String Constant	3	_	_	measurements/
 EndOfValues
 EndOfLabels
 string constant
 
 outputport
 
-1	3	710	320	0	0	1	mandatory= 0	0	1
+1	3	680	270	0	0	1	mandatory= 0	0	1
 
 
 Run_ConstantString	1	EndOfFunc
 BEGIN_LINE
-0	104	0	1	-1	0
+0	17	0	1	-1	0
 END_LINE
 internalport
 
@@ -789,6 +753,246 @@ finishport
 -----
 
 set	2	EndOfFunc
+BEGIN_LINE
+0	-1	0	3	-1	0
+END_LINE
+END_BLOCK
+BEGIN_BLOCK
+
+rtinfo
+_
+16	0	0	0
+_
+_
+Device ID: MAC address, Network Address: IP addr, SODL Type: SODL format version, SODL name: Name of application,
+RuntimeInfo
+0
+_
+145	295	242	454
+1	0
+outputport
+
+1	3	245	315	0	0	1	mandatory= 0	0	1
+Device ID
+
+getstat	1	EndOfFunc
+BEGIN_LINE
+0	17	1	1	-1	0
+END_LINE
+outputport
+
+1	1	245	325	1	0	1	mandatory= 0	0	1
+RAM (KB)
+
+getstat	2	EndOfFunc
+BEGIN_LINE
+0	-1	0	1	-1	0
+END_LINE
+outputport
+
+1	1	245	335	2	0	1	mandatory= 0	0	1
+Storage (KB)
+
+getstat	3	EndOfFunc
+BEGIN_LINE
+0	-1	0	1	-1	0
+END_LINE
+outputport
+
+1	3	245	345	3	0	1	mandatory= 0	0	1
+EHS version
+
+getstat	4	EndOfFunc
+BEGIN_LINE
+0	-1	0	1	-1	0
+END_LINE
+outputport
+
+1	3	245	355	4	0	1	mandatory= 0	0	1
+ModuleList
+
+getstat	5	EndOfFunc
+BEGIN_LINE
+0	-1	0	1	-1	0
+END_LINE
+outputport
+
+1	3	245	365	5	0	1	mandatory= 0	0	1
+Install Dir
+
+getstat	6	EndOfFunc
+BEGIN_LINE
+0	-1	0	1	-1	0
+END_LINE
+outputport
+
+1	3	245	390	6	0	1	mandatory= 0	0	1
+IP Addre
+
+getdyn	1	EndOfFunc
+BEGIN_LINE
+0	-1	0	1	-1	0
+END_LINE
+outputport
+
+1	1	245	400	7	0	1	mandatory= 0	0	1
+RAM Avail (KB)
+
+getdyn	2	EndOfFunc
+BEGIN_LINE
+0	-1	0	1	-1	0
+END_LINE
+outputport
+
+1	1	245	410	8	0	1	mandatory= 0	0	1
+Stor Avail (KB)
+
+getdyn	3	EndOfFunc
+BEGIN_LINE
+0	-1	0	1	-1	0
+END_LINE
+outputport
+
+1	1	245	420	9	0	1	mandatory= 0	0	1
+CPU
+
+getdyn	4	EndOfFunc
+BEGIN_LINE
+0	-1	0	1	-1	0
+END_LINE
+outputport
+
+1	1	245	440	10	0	1	mandatory= 0	0	1
+Pair ID
+
+getdyn	5	EndOfFunc
+BEGIN_LINE
+0	-1	0	1	-1	0
+END_LINE
+startport
+
+2	-1	145	305	0	1	0	mandatory= 0	0	1
+GetStatic
+
+getstat	0	EndOfFunc
+BEGIN_LINE
+0	-1	0	2	-1	0
+END_LINE
+startport
+
+2	3	145	380	1	0	0	mandatory= 0	0	1
+GetDynamic
+
+getdyn	0	EndOfFunc
+BEGIN_LINE
+0	-1	0	2	-1	0
+END_LINE
+startport
+
+2	1	145	430	2	0	0	mandatory= 0	0	1
+Req. Pair ID
+
+reqpairid	0	EndOfFunc
+BEGIN_LINE
+0	-1	0	2	-1	0
+END_LINE
+finishport
+
+3	-1	245	305	0	0	1	mandatory= 0	0	1
+---
+
+getstat	7	EndOfFunc
+BEGIN_LINE
+0	17	0	3	-1	0
+END_LINE
+finishport
+
+3	3	245	380	1	0	1	mandatory= 0	0	1
+---
+
+getdyn	6	EndOfFunc
+BEGIN_LINE
+0	-1	0	3	-1	0
+END_LINE
+finishport
+
+3	1	245	430	2	0	1	mandatory= 0	0	1
+Pair ID
+
+getdyn	7	EndOfFunc
+BEGIN_LINE
+0	-1	0	3	-1	0
+END_LINE
+END_BLOCK
+BEGIN_BLOCK
+
+stringfn_formats
+_
+17	0	0	0
+_
+_
+This is a 2-input string formatter. Use the format property to show how the string should appear.
+string_format
+0
+_
+675	315	725	375
+1	0
+parameter
+Format	3	_	_	%s%s
+EndOfValues
+EndOfLabels
+C-style format string
+
+inputport
+
+0	3	675	345	0	0	1	mandatory= 0	0	1
+s1
+
+run	1	EndOfFunc
+BEGIN_LINE
+1	13	0	0	-1	0
+690	270
+690	230
+665	230
+665	345
+END_LINE
+inputport
+
+0	3	675	360	1	0	1	mandatory= 0	0	1
+s2
+
+run	2	EndOfFunc
+BEGIN_LINE
+1	16	0	0	-1	0
+655	315
+655	360
+END_LINE
+outputport
+
+1	3	725	345	0	0	1	mandatory= 0	0	1
+
+
+run	3	EndOfFunc
+BEGIN_LINE
+0	11	0	1	-1	0
+END_LINE
+startport
+
+2	3	675	325	0	0	1	mandatory= 0	0	1
+
+
+run	0	EndOfFunc
+BEGIN_LINE
+1	16	0	2	-1	0
+670	305
+670	325
+END_LINE
+finishport
+
+3	3	725	325	0	0	1	mandatory= 0	0	1
+
+
+run	4	EndOfFunc
 BEGIN_LINE
 0	-1	0	3	-1	0
 END_LINE
