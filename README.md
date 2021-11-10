@@ -1,2 +1,4 @@
-# fantastic-invention
-Getting started with AWS-IiT, Node.red using inxware. 
+# IoT Integration Examples using inxware
+AWS IoT Connectivity
+Node Red /RaspberryPi MODBUS & MQTT connectivity
+
