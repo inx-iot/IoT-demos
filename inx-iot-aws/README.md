@@ -27,7 +27,7 @@ Then choose create new policy. Add the following statements.
 iot:Connect
 ${aws-iot-prefix}:client/${iot:Connection.Thing.ThingName}
 iot:Publish
-${aws-iot-prefix}:measurements/${iot:Connection.Thing.ThingName}
+${aws-iot-prefix}:topic/measurements/${iot:Connection.Thing.ThingName}
 
 ![Add A Thing 05](screenshot06IotCoreAddThing05.png)
 
@@ -52,8 +52,12 @@ Then double click on the string constant to the left of the project that contain
 
 Now deploy the app to your device. You can find out the IP address of your device by looking at the front panel display. The top display in red should be displaying the last subnet of the IP address.
 
+## Create an S3 bucket
+Next we need to create an S3 bucket for the measurement data. In you AWS console go to the S3 service and create a new bucket in the same region as your IoT Core region.
 
-then iot s3 bucket
+![S3 Create](screenshot11S301.png)
+
+![S3 Settings](screenshot12S302.png)
 
 then iot kinesis
 then iot core rule
