@@ -50,6 +50,9 @@ Then double click on the string constant to the left of the project that contain
 
 ![MQTT Hostname](screenshot10LABmqtthostname.png)
 
+Now deploy the app to your device. You can find out the IP address of your device by looking at the front panel display. The top display in red should be displaying the last subnet of the IP address.
+
+
 then iot s3 bucket
 
 then iot kinesis
