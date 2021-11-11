@@ -131,4 +131,40 @@ Add an action and choose "Send a message to an Amazon Kinesis Stream", choose th
 
 ![IoT Core Rule](screenshot23Rule01.png)
 
-then quicksight (manifest.json)
+## Quicksight Setup
+First we will need to create a manifest.json to describe the data in your S3 bucket. Save the following to a file called manifest.json
+```
+{
+    "fileLocations":[
+       {
+          "URIPrefixes":[
+             "s3://${nameofyourbucket}/"
+          ]
+       }
+    ],
+    "globalUploadSettings":{
+       "format":"JSON","delimiter":"\n"
+    }
+}
+```
+replacing ${nameofyourbucket} with the name of your S3 bucket you created earlier.
+
+Now go to Quicksight in your AWS console. Then go to Datasets and click New dataset.
+
+![Quicksight new dataset](screenshot24Quicksight01.png)
+
+Choose S3 then give a name to your dataset and upload the manifest.json file you created earlier then click connect.
+
+![Quicksight manifest](screenshot25Quicksight02.png)
+
+The data will import. Then click Visualize.
+
+![Quicksight visualize](screenshot26Quicksight03.png)
+
+You should now be presented with the Quicksight dashboard builder. Choose line chart.
+
+![Quicksight line chart](screenshot27Quicksight04.png)
+
+Now drag the t series from the left on to the x axis. Now drag the pt100_1 series on to the y axis. You should now have a line chart representing the data from your device.
+
+![Quicksight line chart](screenshot28Quicksight05.png)
