@@ -122,7 +122,13 @@ Then under destination browse for your S3 bucket you created earlier. Leave the 
 
 ![Kinesis 03](screenshot22Kinesis03.png)
 
+## Create an IoT core rule
+We now need a IoT core rule to send the MQTT data to our Delivery Stream. Go to the IoT core service in your AWS console. Then click on Act then click on Rules then click on Create. Give the rule a name and a description. Set the rule query statement to 
+```
+SELECT decode(encode(*, 'base64'), 'base64') AS payload, clientid() as clientId FROM 'measurements/+'
+```
+Add an action and choose "Send a message to an Amazon Kinesis Stream", choose the data stream you created earlier. Set the partition key to `${newuuid()}`. Click "create role" for the permissions.
 
+![IoT Core Rule](screenshot23Rule01.png)
 
-then iot core rule
 then quicksight (manifest.json)
