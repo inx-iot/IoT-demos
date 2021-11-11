@@ -107,8 +107,22 @@ We then need to update the configuration of the function to have a 60 second tim
 
 ![Lambda Timeout](screenshot19Lambda05.png)
 
-
 ## Create a Kinesis Delivery Stream (Firehose)
+We now need to create a Kinesis Delivery stream to push the data stream in to our S3 bucket. Go to the Kinesis service in the AWS console and then click on Delivery Streams then click on create delivery stream
+
+For source choose "Amazon Kinesis Data Stream". For destination choose "Amazon S3". Then browse for your data stream you created earlier. Then give your delivery stream a name.
+
+![Kinesis 01](screenshot20Kinesis01.png)
+
+For data transformation choose enable. Then browse for the Lambda function you created earlier. Leave the other settings on their defaults.
+
+![Kinesis 02](screenshot21Kinesis02.png)
+
+Then under destination browse for your S3 bucket you created earlier. Leave the other settings default then click create delivery stream.
+
+![Kinesis 03](screenshot22Kinesis03.png)
+
+
 
 then iot core rule
 then quicksight (manifest.json)
