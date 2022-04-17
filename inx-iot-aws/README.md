@@ -1,4 +1,9 @@
 # INX AWS IoT
+
+Configuring devices to connect to AWS can be challenging. inxware devices support the security requirements of AWS's IOT device connectivity and it is very easy to install AWS certificates and credentials. 
+
+However the process of generating credentials and logging data from a device into AWS data storage is quite lengthy, so we have created a howto document here to help you configure your AWS-IoT service.
+
 ## Sign Up To IoT Core
 Log in to your AWS account and sign up for IoT Core. Once you are signed up go in to the settings for your IoT Core and make a note of the end point address.
 
