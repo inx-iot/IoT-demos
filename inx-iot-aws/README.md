@@ -10,6 +10,8 @@ Log in to your AWS account and sign up for IoT Core. Once you are signed up go i
 https://${region}.console.aws.amazon.com/iot/home?region=${region}#/settings
 ![MQTT Address](docs/screenshot01IoTCoreAddress.png)
 
+(see AWS for regional options)
+
 ## step 2:Add A Thing To IoT Core
 Click on Things in the left hand menu. Then click on Create Things.
 
