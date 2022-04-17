@@ -47,6 +47,8 @@ Now download the certificates for your device.
 Rename the client certificate to client.pem. Rename the client key to client.key. Rename the Amazon trust services endpoint root CA to root.crt.
 
 ## STEP 3: Set up a Lucid Application
+If you don't have Lucid tools installed already, plese download the installer from here: https://devport.inx-systems.com/appStore/binaries/BRIX-tools.exe
+
 Open the Lucid Application Builder and open the inx-aws-iot.lpj. Then go to File and Import Resource File and choose the client.pem you downloaded earlier. Repeat this for client.key and root.crt.
 
 ![Import Resource File](docs/screenshot09LABImportResourceFile.png)
