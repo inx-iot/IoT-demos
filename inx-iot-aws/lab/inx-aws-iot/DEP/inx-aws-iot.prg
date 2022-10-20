@@ -123,7 +123,7 @@ BEGIN_BLOCK
 gpio_out
 _
 5	0	0	0
-_
+[OBS]
 _
 GPIO Output
 gpio_out
@@ -219,7 +219,7 @@ BEGIN_BLOCK
 inx-mqtt_client
 _
 7	0	0	0
-_
+[OBS]
 _
 mqtt_client
 mqtt_client
@@ -354,7 +354,7 @@ BEGIN_BLOCK
 inx-adc_read
 _
 9	0	0	0
-_
+[OBS]
 _
 adc_read
 adc_read
@@ -444,39 +444,39 @@ BEGIN_BLOCK
 inx-mqtt_publish
 _
 11	0	0	0
-_
+[OBS]
 _
 mqtt_publish
 mqtt_publish
 0
 _
-950	285	1059	424
+950	290	1059	429
 1	0
 inputport
 
-0	3	944	315	0	0	1	mandatory= 0	0	1
+0	3	944	320	0	0	1	mandatory= 0	0	1
 topic name
 
 publish	1	EndOfFunc
 BEGIN_LINE
 1	17	0	0	-1	0
 934	345
-934	315
+934	320
 END_LINE
 inputport
 
-0	3	944	325	1	0	1	mandatory= 0	0	1
+0	3	944	330	1	0	1	mandatory= 0	0	1
 Payload
 
 publish	2	EndOfFunc
 BEGIN_LINE
 1	14	0	0	-1	0
 924	490
-924	325
+924	330
 END_LINE
 inputport
 
-0	1	944	335	2	0	1	mandatory= 0	0	1
+0	1	944	340	2	0	1	mandatory= 0	0	1
 qos
 
 publish	3	EndOfFunc
@@ -485,18 +485,18 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	3	944	295	0	0	1	mandatory= 0	0	1
+2	3	944	300	0	0	1	mandatory= 0	0	1
 publish
 
 publish	0	EndOfFunc
 BEGIN_LINE
 1	14	0	2	-1	0
-939	470
-939	295
+934	470
+934	300
 END_LINE
 finishport
 
-3	-1	1063	295	0	0	1	mandatory= 0	0	1
+3	-1	1063	300	0	0	1	mandatory= 0	0	1
 --
 
 publish	4	EndOfFunc

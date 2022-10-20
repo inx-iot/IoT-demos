@@ -1,11 +1,11 @@
 <LucidProject>
 <Version>1.4</Version>
-<ProjectName>inx-aws-iot</ProjectName>
+<ProjectName>iot-aws-demo</ProjectName>
 <Toolboxes>
 <Toolbox hash="0x1abcde">core-nano</Toolbox>
 <Toolbox hash="0x1ddcd">core-micro</Toolbox>
 </Toolboxes>
-<LastTransferToTarget>2022-09-13 15:47:28:000</LastTransferToTarget>
+<LastTransferToTarget>2022-09-20 11:44:10:000</LastTransferToTarget>
 <GroupSet>
 <Group>
 <ID>1</ID>
@@ -34,9 +34,9 @@
 <BdfFileSet/>
 <ResourceFileSet>
 <ResourceFile>
-<HostFileName>root.crt</HostFileName>
+<HostFileName>client.key</HostFileName>
 <Description/>
-<TargetFileName>root.crt</TargetFileName>
+<TargetFileName>client.key</TargetFileName>
 </ResourceFile>
 <ResourceFile>
 <HostFileName>client.pem</HostFileName>
@@ -44,9 +44,9 @@
 <TargetFileName>client.pem</TargetFileName>
 </ResourceFile>
 <ResourceFile>
-<HostFileName>client.key</HostFileName>
+<HostFileName>root.crt</HostFileName>
 <Description/>
-<TargetFileName>client.key</TargetFileName>
+<TargetFileName>root.crt</TargetFileName>
 </ResourceFile>
 </ResourceFileSet>
 </ExternalFiles>
@@ -73,9 +73,9 @@
 <Location>DEFAULT_LAYOUT_FOR_WIDGET_GROUP_default</Location>
 </LayoutFileSet>
 <ResourceFileSet>
-<Location>root.crt</Location>
-<Location>client.pem</Location>
 <Location>client.key</Location>
+<Location>client.pem</Location>
+<Location>root.crt</Location>
 </ResourceFileSet>
 <MiscFileSet>
 <Location>t.sdl</Location>
