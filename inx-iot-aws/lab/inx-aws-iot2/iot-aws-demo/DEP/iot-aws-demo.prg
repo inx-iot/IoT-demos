@@ -202,9 +202,9 @@ channel
 funcName= read none	1	EndOfFunc
 BEGIN_LINE
 1	3	0	0	-1	0
-470	360
-470	170
-344	170
+440	310
+440	300
+344	300
 344	220
 END_LINE
 outputport
@@ -248,7 +248,7 @@ This is an integer constant.
 Constant_Int1
 0
 _
-335	330	440	370
+305	280	410	320
 1	0
 blockattr
 BEGIN_BA
@@ -263,7 +263,7 @@ integer constant
 
 outputport
 
-1	1	coords= 440 360 0	0	0	1	mandatory= 0	0	1
+1	1	coords= 410 310 0	0	0	1	mandatory= 0	0	1
 internal
 
 funcName= Run_ConstantInt none	1	EndOfFunc

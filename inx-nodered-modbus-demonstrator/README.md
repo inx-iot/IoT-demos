@@ -13,12 +13,12 @@ Then click the Run button next to the IP address and the modbus app should be lo
 ## Raspberrypi setup
 Install the default raspberry pi image.  
 Then open a terminal and run this command  
-`bash <(curl -sL https://raw.githubusercontent.com/pbeaumontinx/inx-nodered-modbus-demonstrator/main/raspberry-setup.sh)`  
+`bash <(curl -sL https://raw.githubusercontent.com/inx-iot/IoT-demos/main/inx-nodered-modbus-demonstrator/raspberry-setup.sh)`  
 This should download and install node-red along with the modbus-serial node package.  
 Then use this command to run node red  
 `sudo node-red-pi --max-old-space-size=256`
 
-Then download https://raw.githubusercontent.com/pbeaumontinx/inx-nodered-modbus-demonstrator/main/flows.json
+Then download https://raw.githubusercontent.com/inx-iot/IoT-demos/inx-nodered-modbus-demonstrator/main/flows.json
 
 Open the node-red interface by opening a web browser and going to http://${ip.adddress.of.your.raspberry.pi}:1880  
 
