@@ -116,7 +116,41 @@ We then need to update the configuration of the function to have a 60 second tim
 
 ![Lambda Timeout](docs/screenshot19Lambda05.png)
 
-## STEP 7: Create a Kinesis Delivery Stream (Firehose)
+## Step 7: Create a lambda function to send the date and time every minute.
+Now we need a lambda function to publish the correct date and time for our device.
+
+Create a new lambda function called sendDateTime.
+
+Replace ${aws-mqtt-end-point-address} in the following code:
+```
+var AWS = require('aws-sdk');
+var iotdata = new AWS.IotData({ endpoint: '${aws-mqtt-end-point-address}' });
+
+exports.handler = async(event) => {
+    console.log("Event => " + JSON.stringify(event));
+    var params = {
+        topic: "datetime",
+        payload: new Date().toISOString(),
+        qos: 0
+    };
+
+    return iotdata.publish(params, function(err, data) {
+        if (err) {
+            console.log("ERROR => " + JSON.stringify(err));
+        }
+        else {
+            console.log("Success");
+        }
+    }).promise();
+};
+
+```
+
+Use the Add Trigger button to add a new EventBridge (CloudWatch Events) trigger that will fire every minute.
+![Lambda Timeout](docs/screenshot29Lambda06.png)
+![Lambda Timeout](docs/screenshot30Lambda07.png)
+
+## STEP 8: Create a Kinesis Delivery Stream (Firehose)
 We now need to create a Kinesis Delivery stream to push the data stream in to our S3 bucket. Go to the Kinesis service in the AWS console and then click on Delivery Streams then click on create delivery stream
 
 For source choose "Amazon Kinesis Data Stream". For destination choose "Amazon S3". Then browse for your data stream you created earlier. Then give your delivery stream a name.
@@ -131,7 +165,7 @@ Then under destination browse for your S3 bucket you created earlier. Leave the 
 
 ![Kinesis 03](docs/screenshot22Kinesis03.png)
 
-## STEP 8: Create an IoT core rule
+## STEP 9: Create an IoT core rule
 We now need a IoT core rule to send the MQTT data to our Delivery Stream. Go to the IoT core service in your AWS console. Then click on Act then click on Rules then click on Create. Give the rule a name and a description. Set the rule query statement to 
 ```
 SELECT decode(encode(*, 'base64'), 'base64') AS payload, clientid() as clientId FROM 'measurements/+'
